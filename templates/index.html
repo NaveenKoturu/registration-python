@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Book an Appointment</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" class="form-control" required>
+                        <option value="D1">Department 1</option>
+                        <option value="D2">Department 2</option>
+                        <option value="D3">Department 3</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="doctor">Doctor:</label>
+                    <select id="doctor" name="doctor" class="form-control" required>
+                        <option value="Doc1">Doctor 1</option>
+                        <option value="Doc2">Doctor 2</option>
+                        <option value="Doc3">Doctor 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">Make an Appointment</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
